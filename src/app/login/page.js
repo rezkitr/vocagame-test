@@ -4,7 +4,7 @@ import Link from "next/link";
 const Login = () => {
     return (
         <div className="h-full flex overflow-auto">
-            <div className="h-max flex-1 bg-[url('/bg-login-blue.png')] bg-cover flex flex-col items-center gap-10 pt-24 pb-28">
+            <div className="login-bg only:h-max flex-1 bg-cover flex flex-col items-center gap-10 pt-24 pb-28">
                 <div className="w-[300px] min-h-[400px] bg-gray-300">Image</div>
                 <div className="text-white w-[440px] text-center">
                     <h1 className="font-bold text-3xl">LOREM</h1>

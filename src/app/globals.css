@@ -21,7 +21,15 @@
         @apply bg-[url('/bg-register-blue.png')];
     }
 
+    .blue .login-bg {
+        @apply bg-[url('/bg-login-blue.png')];
+    }
+
     .orange .register {
         @apply bg-[url('/bg-register-orange.png')];
+    }
+
+    .orange .login-bg {
+        @apply bg-[url('/bg-login-orange.png')];
     }
 }

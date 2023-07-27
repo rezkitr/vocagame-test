@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Register = () => {
     return (
-        <div className="register h-full overflow-auto flex justify-center bg-cover text-gray-50">
+        <div className="register h-full overflow-auto flex justify-center bg-cover text-gray-50 relative">
             <div className="absolute top-0 left-6 w-[380px] h-[200px] bg-gray-300">
                 Image
             </div>
