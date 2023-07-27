@@ -22,7 +22,7 @@ const ToggleThemeButton = () => {
                     />
                 </div>
             </div>
-            <p className="text-sm font-semibold text-orange-400">Orange</p>
+            <p className="text-sm font-semibold text-orange-600">Orange</p>
         </div>
     );
 };

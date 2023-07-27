@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+}
+
 @layer components {
     .auth-input.default .input-wrapper {
         @apply border-black;
@@ -14,6 +23,14 @@
     .auth-input.alt .input-wrapper {
         @apply border-white;
     }
+
+    .blue .submit-btn {
+        @apply text-blue-900 bg-blue-200;
+    }
+
+    .orange .submit-btn {
+        @apply text-orange-600 bg-orange-200;
+    }
 }
 
 @layer base {
@@ -25,11 +42,21 @@
         @apply bg-[url('/bg-login-blue.png')];
     }
 
+    .blue .login-title,
+    .blue .login-link {
+        @apply text-blue-900;
+    }
+
     .orange .register {
         @apply bg-[url('/bg-register-orange.png')];
     }
 
     .orange .login-bg {
         @apply bg-[url('/bg-login-orange.png')];
+    }
+
+    .orange .login-title,
+    .orange .login-link {
+        @apply text-orange-600;
     }
 }

@@ -1,14 +1,15 @@
 "use client";
 import { AuthPageTitle, Input, SubmitButton } from "@/components/auth";
+import Image from "next/image";
 import Link from "next/link";
 
 const Register = () => {
     return (
-        <div className="register h-full overflow-auto flex justify-center bg-cover text-gray-50 relative">
+        <div className="min-h-full flex justify-center items-center text-gray-50 relative">
             <div className="absolute top-0 left-6 w-[380px] h-[200px] bg-gray-300">
-                Image
+                <Image src="/register-image.jpg" fill alt="registerImg" />
             </div>
-            <div className="w-[480px] h-fit mt-20 mb-24">
+            <div className="w-[480px] min-h-fit mt-20 mb-20">
                 <AuthPageTitle
                     title="Daftarkan Akun"
                     caption="Daftar akun anda  dengan mengisi form dibawah"
