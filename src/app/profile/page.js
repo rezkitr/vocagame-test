@@ -22,7 +22,7 @@ const Profile = () => {
     return (
         <div>
             <FormHeader />
-            <div className="flex gap-3 md:gap-6">
+            <div className="flex gap-1 md:gap-6">
                 <div className="flex-[0.2] md:flex-[0.3] h-[600px] flex flex-col gap-3 pt-4 pb-10 pr-2 md:pr-6 border-solid border-r border-gray-200">
                     <div className="flex-1 border-solid border-b border-gray-600">
                         <Button

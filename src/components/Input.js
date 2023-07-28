@@ -25,9 +25,7 @@ const Input = ({
     return (
         <div className={`auth-input ${style}`}>
             <label className="font-semibold text-sm">{label}</label>
-            <div
-                className={`input-wrapper mt-2 h-12 rounded-3xl border flex items-center justify-between px-4 ${wrapperClassName}`}
-            >
+            <div className={`input-wrapper mt-2 h-12 rounded-3xl border flex items-center justify-between px-4 ${wrapperClassName}`}>
                 <input
                     {...register && register(name, {
                         required: "Tidak boleh kosong",
@@ -42,10 +40,7 @@ const Input = ({
                     {...props}
                 />
                 {isPasswordType && (
-                    <div
-                        className="cursor-pointer ml-4"
-                        onClick={togglePasswordVisibility}
-                    >
+                    <div className="cursor-pointer ml-4" onClick={togglePasswordVisibility}>
                         {showPassword ? (
                             <AiFillEyeInvisible size={20} />
                         ) : (
