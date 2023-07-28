@@ -2,7 +2,11 @@ import { removeUserCookies, setUserCookies } from "@/utils";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    user: null,
+    user: {
+        name: "Rezki",
+        phone: "087866786655",
+        password: "abc123",
+    },
     credentials: null,
 };
 

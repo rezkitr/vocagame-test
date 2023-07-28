@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <div>
             <ToggleThemeHeader />
-            <div className="profile-header h-24 flex items-center justify-between px-24 bg-orange-600">
+            <div className="profile-header h-24 flex items-center justify-between px-4 md:px-24 bg-orange-600">
                 <Logo />
                 <div className="text-gray-500 text-4xl">
                     <FaUserCircle />

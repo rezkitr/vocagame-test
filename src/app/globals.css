@@ -24,11 +24,13 @@ html {
         @apply border-white;
     }
 
-    .blue .login-submit-btn {
+    .blue .login-submit-btn,
+    .blue .profile-edit-btn {
         @apply text-blue-900 bg-blue-200;
     }
 
-    .orange .login-submit-btn {
+    .orange .login-submit-btn,
+    .orange .profile-edit-btn {
         @apply text-orange-600 bg-orange-200;
     }
 }
