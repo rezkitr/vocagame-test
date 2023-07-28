@@ -1,5 +1,4 @@
 "use client";
-import { useEffect } from "react";
 import { Button, Input, ToggleThemeButton } from "@/components";
 import { AuthPageTitle } from "@/components/auth";
 import { onLogin } from "@/redux/slices/userSlice";
@@ -8,22 +7,12 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useForm, FormProvider } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import Cookies from "js-cookie";
 
 const Login = () => {
     const router = useRouter();
     const dispatch = useDispatch();
     const form = useForm();
     const user = useSelector((state) => state.user.user);
-
-    useEffect(() => {
-        const userCookies = Cookies.get("user");
-        const loginCookies = Cookies.get("loginSession");
-
-        if (userCookies && loginCookies) {
-            router.push("/profile");
-        }
-    }, []);
 
     const onSubmit = (data) => {
         if (!user) {

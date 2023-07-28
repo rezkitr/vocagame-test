@@ -31,7 +31,7 @@ const Input = ({
                         required: "Tidak boleh kosong",
                         ...validation,
                     })}
-                    className="flex-1 h-full bg-transparent focus:outline-none"
+                    className="w-full h-full bg-transparent focus:outline-none"
                     type={
                         (isPasswordType && showPassword) || !isPasswordType
                             ? "text"
