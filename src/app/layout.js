@@ -1,4 +1,3 @@
-"use client";
 import "./globals.css";
 import { Roboto } from "next/font/google";
 import ReduxProvider from "@/redux/Provider";

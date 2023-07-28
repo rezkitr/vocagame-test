@@ -23,7 +23,7 @@ const Register = () => {
         }
         dispatch(onRegister(data));
         form.reset();
-        // router.push("/login");
+        router.push("/login");
     };
 
     return (

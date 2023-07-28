@@ -5,10 +5,13 @@ import { FaUserCircle, FaPenFancy } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
 import { BiSolidLogOut } from "react-icons/bi";
 import { FormProvider } from "react-hook-form";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { onLogout } from "@/redux/slices/userSlice";
 
 const Profile = () => {
-    const user = useSelector(state => state.user.user)
+    const user = useSelector((state) => state.user.user);
+    const dispatch = useDispatch();
+
     return (
         <div>
             <FormHeader />
@@ -26,6 +29,7 @@ const Profile = () => {
                             text="Logout"
                             leftIcon={BiSolidLogOut}
                             className="text-sm text-red-800 py-0 bg-transparent"
+                            onClick={() => dispatch(onLogout())}
                         />
                     </div>
                 </div>
@@ -40,8 +44,15 @@ const Profile = () => {
                         <form>
                             <div className="flex flex-col gap-3 mb-6">
                                 <Input label="Nama" value={user.name} />
-                                <Input label="No Handphone" value={user.phone} />
-                                <Input label="Old Password" type="password" value={user.password} />
+                                <Input
+                                    label="No Handphone"
+                                    value={user.phone}
+                                />
+                                <Input
+                                    label="Old Password"
+                                    type="password"
+                                    value={user.password}
+                                />
                                 <Input label="New Password" type="password" />
                             </div>
                         </form>

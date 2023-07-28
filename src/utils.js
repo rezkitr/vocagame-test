@@ -3,14 +3,25 @@ import CryptoJS from "crypto-js";
 
 const ENCRYPTION_KEY = "vocaapproved";
 
-export const setUserCookies = (data) => {
+export const setCookies = (name, data, expires) => {
     const encryptedPayload = CryptoJS.AES.encrypt(
         JSON.stringify(data),
         ENCRYPTION_KEY
     ).toString();
     const currentTime = new Date();
     const expiredTime = currentTime.setTime(currentTime.getTime() + 1000 * 60);
-    Cookies.set("user", encryptedPayload, { expires: new Date(expiredTime) });
+    Cookies.set(name, encryptedPayload, {
+        expires: expires || new Date(expiredTime),
+    });
 };
 
-export const removeUserCookies = () => Cookies.remove("user");
+export const getDecryptedCookies = (name) => {
+    const cookies = Cookies.get(name);
+    if (!cookies) return null;
+
+    const decryptedValue = CryptoJS.AES.decrypt(cookies, ENCRYPTION_KEY);
+    const data = JSON.parse(CryptoJS.enc.Utf8.stringify(decryptedValue));
+    return data;
+};
+
+export const removeCookies = (name) => Cookies.remove(name);

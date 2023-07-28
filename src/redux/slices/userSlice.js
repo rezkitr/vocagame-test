@@ -1,12 +1,8 @@
-import { removeUserCookies, setUserCookies } from "@/utils";
+import { removeCookies, setCookies } from "@/utils";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    user: {
-        name: "Rezki",
-        phone: "087866786655",
-        password: "abc123",
-    },
+    user: null,
     credentials: null,
 };
 
@@ -14,20 +10,23 @@ export const userSlice = createSlice({
     name: "user",
     initialState,
     reducers: {
+        setUser: (state, action) => {
+            state.user = action.payload;
+        },
         onRegister: (state, action) => {
             state.user = action.payload;
+            setCookies("user", action.payload, 1);
         },
         onLogin: (state, action) => {
             state.credentials = action.payload;
-            setUserCookies(action.payload);
+            setCookies("loginSession", action.payload);
         },
         onLogout: (state) => {
-            state.user = null;
             state.credentials = null;
-            removeUserCookies();
+            removeCookies("loginSession");
         },
     },
 });
 
-export const { onRegister, onLogin, onLogout } = userSlice.actions;
+export const { setUser, onRegister, onLogin, onLogout } = userSlice.actions;
 export default userSlice.reducer;
