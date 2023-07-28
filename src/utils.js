@@ -9,9 +9,11 @@ export const setCookies = (name, data, expires) => {
         ENCRYPTION_KEY
     ).toString();
     const currentTime = new Date();
-    const expiredTime = currentTime.setTime(currentTime.getTime() + 1000 * 60);
+    const defaultExpiredTime = currentTime.setTime(
+        currentTime.getTime() + 1000 * 60
+    );
     Cookies.set(name, encryptedPayload, {
-        expires: expires || new Date(expiredTime),
+        expires: expires || new Date(defaultExpiredTime),
     });
 };
 
