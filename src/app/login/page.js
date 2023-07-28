@@ -6,17 +6,27 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useForm, FormProvider } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Login = () => {
     const router = useRouter();
     const dispatch = useDispatch();
     const form = useForm();
+    const user = useSelector((state) => state.user.user);
 
     const onSubmit = (data) => {
-        dispatch(onLogin(data));
-        form.reset();
-        router.push("/profile");
+        if (!user) {
+            router.push("/register");
+        } else {
+            const { password } = data;
+            if (password !== user.password) {
+                form.setError("password", { message: "Password salah" });
+            } else {
+                dispatch(onLogin(data));
+                form.reset();
+                router.push("/profile");
+            }
+        }
     };
 
     return (
@@ -62,7 +72,11 @@ const Login = () => {
                                     type="password"
                                 />
                             </div>
-                            <Button type="submit" text="Masuk Sekarang" className="login-submit-btn w-full" />
+                            <Button
+                                type="submit"
+                                text="Masuk Sekarang"
+                                className="login-submit-btn w-full"
+                            />
                         </form>
                     </FormProvider>
                     <p className="text-center mt-10 text-sm font-semibold">

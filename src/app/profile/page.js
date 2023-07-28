@@ -7,10 +7,17 @@ import { BiSolidLogOut } from "react-icons/bi";
 import { FormProvider } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { onLogout } from "@/redux/slices/userSlice";
+import { useRouter } from "next/navigation";
 
 const Profile = () => {
     const user = useSelector((state) => state.user.user);
+    const router = useRouter();
     const dispatch = useDispatch();
+
+    const logout = () => {
+        dispatch(onLogout());
+        router.push("/login");
+    };
 
     return (
         <div>
@@ -29,7 +36,7 @@ const Profile = () => {
                             text="Logout"
                             leftIcon={BiSolidLogOut}
                             className="text-sm text-red-800 py-0 bg-transparent"
-                            onClick={() => dispatch(onLogout())}
+                            onClick={logout}
                         />
                     </div>
                 </div>
