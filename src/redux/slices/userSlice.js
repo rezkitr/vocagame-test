@@ -14,10 +14,12 @@ export const userSlice = createSlice({
             state.user = action.payload;
         },
         onLogin: (state, action) => {
+            state.credentials = action.payload;
             setUserCookies(action.payload);
         },
         onLogout: (state) => {
             state.user = null;
+            state.credentials = null;
             removeUserCookies();
         },
     },

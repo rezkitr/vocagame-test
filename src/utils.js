@@ -1,7 +1,7 @@
 import Cookies from "js-cookie";
 import CryptoJS from "crypto-js";
 
-export const ENCRYPTION_KEY = "vocaapproved";
+const ENCRYPTION_KEY = "vocaapproved";
 
 export const setUserCookies = (data) => {
     const encryptedPayload = CryptoJS.AES.encrypt(

@@ -20,9 +20,9 @@ const Register = () => {
             });
             return;
         }
-        dispatch(onRegister({ ...data }));
+        dispatch(onRegister(data));
         form.reset();
-        router.push("/login");
+        // router.push("/login");
     };
 
     return (
@@ -54,7 +54,16 @@ const Register = () => {
                                 label="Nomor Handphone"
                                 placeholder="Nomor handphone anda"
                                 style="alt"
-                                validation={{ minLength: 11, maxLength: 13 }}
+                                validation={{
+                                    minLength: {
+                                        value: 11,
+                                        message: "Min. 11 karakter",
+                                    },
+                                    maxLength: {
+                                        value: 13,
+                                        message: "Max. 13 karakter",
+                                    },
+                                }}
                             />
                             <Input
                                 name="password"
@@ -62,6 +71,12 @@ const Register = () => {
                                 placeholder="Masukkan password anda"
                                 type="password"
                                 style="alt"
+                                validation={{
+                                    minLength: {
+                                        value: 6,
+                                        message: "Min. 6 karakter",
+                                    },
+                                }}
                             />
                             <Input
                                 name="passwordConfirm"

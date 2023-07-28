@@ -47,6 +47,12 @@ html {
         @apply text-blue-900;
     }
 
+    .blue .profile-header,
+    .blue .profile-header,
+    .blue .profile-banner {
+        @apply bg-blue-900;
+    }
+
     .orange .register {
         @apply bg-[url('/bg-register-orange.png')];
     }
@@ -58,5 +64,11 @@ html {
     .orange .login-title,
     .orange .login-link {
         @apply text-orange-600;
+    }
+
+    .orange .profile-header,
+    .orange .profile-header,
+    .orange .profile-banner {
+        @apply bg-orange-600;
     }
 }

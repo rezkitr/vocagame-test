@@ -14,7 +14,7 @@ const Login = () => {
     const form = useForm();
 
     const onSubmit = (data) => {
-        dispatch(onLogin({ ...data }));
+        dispatch(onLogin(data));
         form.reset();
         router.push("/profile");
     };
