@@ -1,7 +1,11 @@
-import React from "react";
+"use client";
 
 const Home = () => {
-    return <div>Home</div>;
+    return (
+        <div className="h-full flex items-center justify-center text-sm">
+            Loading...
+        </div>
+    );
 };
 
 export default Home;
