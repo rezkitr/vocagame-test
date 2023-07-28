@@ -1,5 +1,6 @@
 "use client";
-import { AuthPageTitle, Input, SubmitButton } from "@/components/auth";
+import { Button } from "@/components";
+import { AuthPageTitle, Input } from "@/components/auth";
 import { onRegister } from "@/redux/slices/userSlice";
 import Image from "next/image";
 import Link from "next/link";
@@ -86,7 +87,7 @@ const Register = () => {
                                 style="alt"
                             />
                         </div>
-                        <SubmitButton text="Daftar Sekarang" />
+                        <Button type="submit" text="Daftar Sekarang" className="w-full text-black bg-blue-100" />
                     </form>
                 </FormProvider>
                 <p className="text-center mt-10 text-sm font-semibold">

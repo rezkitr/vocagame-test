@@ -24,11 +24,11 @@ html {
         @apply border-white;
     }
 
-    .blue .submit-btn {
+    .blue .login-submit-btn {
         @apply text-blue-900 bg-blue-200;
     }
 
-    .orange .submit-btn {
+    .orange .login-submit-btn {
         @apply text-orange-600 bg-orange-200;
     }
 }
@@ -48,7 +48,7 @@ html {
     }
 
     .blue .profile-header,
-    .blue .profile-header,
+    .blue .profile-footer,
     .blue .profile-banner {
         @apply bg-blue-900;
     }
@@ -67,7 +67,7 @@ html {
     }
 
     .orange .profile-header,
-    .orange .profile-header,
+    .orange .profile-footer,
     .orange .profile-banner {
         @apply bg-orange-600;
     }

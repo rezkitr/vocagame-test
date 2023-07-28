@@ -1,6 +1,6 @@
 "use client";
-import { ToggleThemeButton } from "@/components";
-import { AuthPageTitle, Input, SubmitButton } from "@/components/auth";
+import { Button, ToggleThemeButton } from "@/components";
+import { AuthPageTitle, Input } from "@/components/auth";
 import { onLogin } from "@/redux/slices/userSlice";
 import Image from "next/image";
 import Link from "next/link";
@@ -62,7 +62,7 @@ const Login = () => {
                                     type="password"
                                 />
                             </div>
-                            <SubmitButton text="Masuk Sekarang" />
+                            <Button type="submit" text="Masuk Sekarang" className="login-submit-btn w-full" />
                         </form>
                     </FormProvider>
                     <p className="text-center mt-10 text-sm font-semibold">

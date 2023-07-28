@@ -1,6 +1,6 @@
 const Banner = () => {
     return (
-        <div className="profile-banner text-white flex flex-col items-center justify-center gap-2 py-6">
+        <div className="profile-banner text-white flex flex-col items-center justify-center gap-2 py-6 rounded-md">
             <h1 className="font-bold text-3xl">LOREM</h1>
             <div className="w-[440px] ">
                 <p className="text-sm text-center">

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import ToggleThemeHeader from "../ToggleThemeHeader";
 import { FaUserCircle } from "react-icons/fa";
 import Logo from "./Logo";
