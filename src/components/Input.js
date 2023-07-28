@@ -10,6 +10,7 @@ const Input = ({
     type = "text",
     style = "default",
     validation = {},
+    wrapperClassName = "",
     ...props
 }) => {
     const isPasswordType = type === "password";
@@ -24,9 +25,11 @@ const Input = ({
     return (
         <div className={`auth-input ${style}`}>
             <label className="font-semibold text-sm">{label}</label>
-            <div className="input-wrapper mt-2 h-12 rounded-3xl border flex items-center justify-between px-4">
+            <div
+                className={`input-wrapper mt-2 h-12 rounded-3xl border flex items-center justify-between px-4 ${wrapperClassName}`}
+            >
                 <input
-                    {...register(name, {
+                    {...register && register(name, {
                         required: "Tidak boleh kosong",
                         ...validation,
                     })}
@@ -51,7 +54,7 @@ const Input = ({
                     </div>
                 )}
             </div>
-            {errors[name] && <ErrorLabel message={errors[name].message} />}
+            {register && errors[name] && <ErrorLabel message={errors[name].message} />}
         </div>
     );
 };

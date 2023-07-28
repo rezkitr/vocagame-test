@@ -1,8 +1,10 @@
 "use client";
 import { Button } from "@/components";
-import { FormHeader } from "@/components/profile";
+import { FormHeader, Input } from "@/components/profile";
 import { FaUserCircle, FaPenFancy } from "react-icons/fa";
+import { FiArrowRight } from "react-icons/fi";
 import { BiSolidLogOut } from "react-icons/bi";
+import { FormProvider } from "react-hook-form";
 
 const Profile = () => {
     return (
@@ -25,11 +27,28 @@ const Profile = () => {
                         />
                     </div>
                 </div>
-                <div className="flex-1 shadow-lg rounded-md p-6">
-                    <div className="flex items-center gap-2 pb-3 border-solid border-b border-gray-300 text-lg">
+                <div className="flex-1 shadow-lg rounded-md px-6 py-8 h-fit">
+                    <div className="flex items-center gap-2 pb-3 mb-3 border-solid border-b border-gray-300 text-lg">
                         <FaPenFancy />
                         <h1 className="font-bold">Edit Profile</h1>
                     </div>
+                    <FormProvider
+                        {...{ register: false, formState: { errors: {} } }}
+                    >
+                        <form>
+                            <div className="flex flex-col gap-3 mb-6">
+                                <Input label="Nama" />
+                                <Input label="No Handphone" />
+                                <Input label="Old Password" type="password" />
+                                <Input label="New Password" type="password" />
+                            </div>
+                        </form>
+                        <Button
+                            text="Edit Profile"
+                            className="profile-edit-btn px-6 py-2 text-sm"
+                            rightIcon={FiArrowRight}
+                        />
+                    </FormProvider>
                 </div>
             </div>
         </div>

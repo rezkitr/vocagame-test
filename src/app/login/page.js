@@ -1,6 +1,6 @@
 "use client";
-import { Button, ToggleThemeButton } from "@/components";
-import { AuthPageTitle, Input } from "@/components/auth";
+import { Button, Input, ToggleThemeButton } from "@/components";
+import { AuthPageTitle } from "@/components/auth";
 import { onLogin } from "@/redux/slices/userSlice";
 import Image from "next/image";
 import Link from "next/link";

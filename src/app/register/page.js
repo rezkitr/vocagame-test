@@ -1,6 +1,6 @@
 "use client";
-import { Button } from "@/components";
-import { AuthPageTitle, Input } from "@/components/auth";
+import { Button, Input } from "@/components";
+import { AuthPageTitle } from "@/components/auth";
 import { onRegister } from "@/redux/slices/userSlice";
 import Image from "next/image";
 import Link from "next/link";
