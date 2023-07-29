@@ -11,6 +11,14 @@ html {
     box-sizing: border-box;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-transition-delay: 9999s;
+    transition-delay: 9999s;
+}
+
 @layer components {
     .auth-input.default .input-wrapper {
         @apply border-black;
