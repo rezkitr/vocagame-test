@@ -16,6 +16,7 @@ export const userSlice = createSlice({
         onRegister: (state, action) => {
             state.user = action.payload;
             setCookies("user", action.payload, 1);
+            removeCookies("loginSession");
         },
         onLogin: (state, action) => {
             state.credentials = action.payload;
